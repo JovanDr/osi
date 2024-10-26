@@ -22,20 +22,30 @@ void Posiljalac::setPrezime( char *a ){
 
 // Метода за провјеру имена пошиљаоца
 void Posiljalac::provjeraImena(char *ime){
-    if(strlen(ime) < 1){
-        setIme(ime);
+    int n = strlen(ime);
+    if(strlen(ime) < 20){
+        for(; *ime && *ime >= 'A' && *ime <= 'z'; ime++);
+        if(!(*ime)){
+            ime -= n;
+            setIme(ime);
+            printf("Ime korisnika je validno!\n");
+            return;
+        } 
     }
-    else{
-        printf("Ime korisnika nije validno!\n");
-    }
+    printf("Ime korisnika nije validno!\n");
 }
 void Posiljalac::provjeraPrezimena(char *prezime){
+    int n = strlen(prezime);
     if(strlen(prezime) < 1){
-        setPrezime(prezime);
+        for(; *prezime && *prezime >= 'A' && *prezime <= 'z'; prezime++);
+        if(!(*prezime)){
+            prezime -= n;
+            setPrezime(prezime);
+            printf("Prezime korisnika je validno!\n");
+            return;
+        } 
     }
-    else{
-        printf("Prezime korisnika nije validno!\n");
-    }
+    printf("Prezime korisnika nije validno!\n");
 }
 
 // Метода за провјеру формата датума рођења
