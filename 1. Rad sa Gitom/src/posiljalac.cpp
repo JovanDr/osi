@@ -81,10 +81,7 @@ bool Posiljalac :: provjeraKoda(char *kod){
         printf("Kod nije validan!\n");
         return false;
     }
-
-
     printf("Kod je validan!\n");
     setKod(kod);
-
     return true;
 }

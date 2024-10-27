@@ -16,8 +16,8 @@ int main(void)
     */
 
     /* Posiljalac p;
-    char kodd[9] = "11532322";
-    p.provjeraKoda(kodd);
+    char kod[9] = "11532322";
+    p.provjeraKoda(kod);
     */
     
     // Кориснички интерфејс
