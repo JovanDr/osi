@@ -1,10 +1,15 @@
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <iomanip>
+#include <ctime> // library za trenutno vrijeme
 #include "../inc/posiljalac.h"
+#include "../inc/datum_rodjenja.h"
+
+
 // Имплементација метода
 
-Posiljalac::Posiljalac() : ime(""), prezime(""){}
+Posiljalac::Posiljalac() : ime(""), prezime("") {}
 
 // Гетери и сетери
 char *Posiljalac::getIme(){
@@ -13,11 +18,20 @@ char *Posiljalac::getIme(){
 char *Posiljalac::getPrezime(){
     return this->prezime;
 }
+Datum_Rodjenja Posiljalac::getDatum(){
+    return this->datum;
+}
 void Posiljalac::setIme( char *a ){
     strcpy(this->ime, a);
 }
 void Posiljalac::setPrezime( char *a ){
     strcpy(this->prezime, a);
+}
+void Posiljalac::setDatum( Datum_Rodjenja x){
+    if(x.provjeraDatumaRodjenja(x.getDan(), x.getMjesec(), x.getGodina()) == true){
+        datum = x;
+        printf("Datum validan!");
+    }
 }
 
 // Метода за провјеру имена пошиљаоца
