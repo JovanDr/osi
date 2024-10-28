@@ -1,8 +1,13 @@
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <iomanip>
+#include <ctime> // library za trenutno vrijeme
 #include <stdbool.h>
 #include "../inc/posiljalac.h"
+#include "../inc/datum_rodjenja.h"
+
+
 // Имплементација метода
 
 Posiljalac::Posiljalac() : ime(""), prezime(""), kod(""), mjesto(""){}
@@ -13,6 +18,9 @@ char *Posiljalac::getIme(){
 }
 char *Posiljalac::getPrezime(){
     return this->prezime;
+}
+Datum_Rodjenja Posiljalac::getDatum(){
+    return this->datum;
 }
 char *Posiljalac::getKod(){
     return this->kod;
@@ -25,6 +33,13 @@ void Posiljalac::setIme( char *a ){
 }
 void Posiljalac::setPrezime( char *a ){
     strcpy(this->prezime, a);
+}
+
+void Posiljalac::setDatum( Datum_Rodjenja x){
+    if(x.provjeraDatumaRodjenja(x.getDan(), x.getMjesec(), x.getGodina()) == true){
+        datum = x;
+        printf("Datum validan!");
+    }
 }
 void Posiljalac :: setKod(char *s){
     strcpy(this->kod, s);

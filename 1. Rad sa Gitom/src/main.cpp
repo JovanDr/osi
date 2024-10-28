@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "../inc/datum_rodjenja.h"
 #include <string.h>
 #include <stdbool.h>
 #include "../inc/posiljalac.h"
@@ -14,10 +15,26 @@ int main(void)
     p.provjeraImena(a);
     p.provjeraPrezimena(b);
     */
+
+    /*
+    Posiljalac p;
+    Datum_Rodjenja x;
+    int dd = 10;
+    int mm = 6;
+    int gggg = 2007;
     
+    if(x.provjeraDatumaRodjenja(dd, mm, gggg)){
+        p.setDatum(x);
+    } else printf("Datum nije validan!");
+    */
+
+   
+    /*
     Posiljalac p;
     char mjesto[4] = "tre";
     p.provjeraMjesta(mjesto);
+    */
+    
     
     /* Posiljalac p;
     char kod[9] = "11532322";
