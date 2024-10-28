@@ -14,7 +14,11 @@ int main(void)
     p.provjeraImena(a);
     p.provjeraPrezimena(b);
     */
-
+    
+    Posiljalac p;
+    char mjesto[4] = "tre";
+    p.provjeraMjesta(mjesto);
+    
     /* Posiljalac p;
     char kod[9] = "11532322";
     p.provjeraKoda(kod);

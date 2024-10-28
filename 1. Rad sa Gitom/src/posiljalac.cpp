@@ -5,7 +5,7 @@
 #include "../inc/posiljalac.h"
 // Имплементација метода
 
-Posiljalac::Posiljalac() : ime(""), prezime(""), kod(""){}
+Posiljalac::Posiljalac() : ime(""), prezime(""), kod(""), mjesto(""){}
 
 // Гетери и сетери
 char *Posiljalac::getIme(){
@@ -17,6 +17,9 @@ char *Posiljalac::getPrezime(){
 char *Posiljalac::getKod(){
     return this->kod;
 }
+char *Posiljalac::getMjesto(){
+    return this->mjesto;
+}
 void Posiljalac::setIme( char *a ){
     strcpy(this->ime, a);
 }
@@ -25,6 +28,9 @@ void Posiljalac::setPrezime( char *a ){
 }
 void Posiljalac :: setKod(char *s){
     strcpy(this->kod, s);
+}
+void Posiljalac::setMjesto(char *m){
+    strcpy(this->mjesto, m);
 }
 
 // Метода за провјеру имена пошиљаоца
@@ -58,6 +64,20 @@ void Posiljalac::provjeraPrezimena(char *prezime){
 // Метода за провјеру формата датума рођења
 
 // Метода за провјеру мјеста пакетомата
+void Posiljalac::provjeraMjesta(char* mjesto){
+    if(strlen(mjesto) > 3 || strlen(mjesto)<1){
+        printf("Nije validan unos mjesta, mora imati minimalno 2 slova!\n");
+        return;
+    }
+    for(int i=0; i<strlen(mjesto); i++){
+        if(mjesto[i] < 'A' || mjesto[i] > 'Z'){
+            printf("Oznaka mjesta mora biti iskljucivo velikim latinicnim slovima!\n");
+            return;
+        }
+    }
+    setMjesto(mjesto);
+    printf("Mjesto je validno i postavljeno.\n");
+}
 
 // Метода за провјеру идентификационог кода
 bool Posiljalac :: provjeraKoda(char *kod){
