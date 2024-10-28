@@ -2,6 +2,9 @@
 #include <stdlib.h>
 #include "posiljalac.cpp"
 #include "datum_rodjenja.cpp"
+#include <string.h>
+#include <stdbool.h>
+#include "../inc/posiljalac.h"
 
 // Главни програм
 int main(void)
@@ -27,6 +30,10 @@ int main(void)
     */
     
     
+    /* Posiljalac p;
+    char kod[9] = "11532322";
+    p.provjeraKoda(kod);
+    */
     
     // Кориснички интерфејс
     printf("%s", "\nHello World");
