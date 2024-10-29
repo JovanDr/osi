@@ -65,3 +65,7 @@ bool Datum_Rodjenja::provjeraDatumaRodjenja(int dan, int mjesec, int godina){
     setGodina(godina);
     return true;
 }
+void Datum_Rodjenja::ispis(int a,int b,int c)
+{
+    printf("%d.%d.%d\n",a,b,c);
+}

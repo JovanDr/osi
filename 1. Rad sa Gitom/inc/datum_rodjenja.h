@@ -18,6 +18,8 @@ class Datum_Rodjenja {
         void setGodina(int godina);
 
         bool provjeraDatumaRodjenja(int dan, int mjesec, int godina);
+
+        void ispis(int, int, int);
 };
 
 #endif

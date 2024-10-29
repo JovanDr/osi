@@ -30,15 +30,18 @@ public:
     void setDatum( Datum_Rodjenja );
 
     // Метода за провјеру имена пошиљаоца
-    void provjeraImena(char*);
-    void provjeraPrezimena(char *);
+    int provjeraImena(char*);
+    int provjeraPrezimena(char *);
 
     // Метода за провјеру формата датума рођења
 
     // Метода за провјеру мјеста пакетомата
-    void provjeraMjesta(char *);
+    int provjeraMjesta(char *);
     // Метода за провјеру идентификационог кода
     bool provjeraKoda(char *);
+    //gligo test
+    void ispis(char *);
+    void ispis_mj(char *);
 };
 
 #endif

@@ -47,53 +47,54 @@ void Posiljalac :: setKod(char *s){
 void Posiljalac::setMjesto(char *m){
     strcpy(this->mjesto, m);
 }
-
+//gligo
+        void Posiljalac::ispis(char *a){
+        printf("%s\n",a);}
+//gligo
 // Метода за провјеру имена пошиљаоца
-void Posiljalac::provjeraImena(char *ime){
+int Posiljalac::provjeraImena(char *ime){
     int n = strlen(ime);
     if(strlen(ime) < 20){
         for(; *ime && *ime >= 'A' && *ime <= 'z'; ime++);
         if(!(*ime)){
             ime -= n;
             setIme(ime);
-            printf("Ime korisnika je validno!\n");
-            return;
-        } 
+            return 1;
+        }
     }
-    printf("Ime korisnika nije validno!\n");
+    return 0;
 }
-void Posiljalac::provjeraPrezimena(char *prezime){
+int Posiljalac::provjeraPrezimena(char *prezime){
     int n = strlen(prezime);
-    if(strlen(prezime) < 1){
+    if(strlen(prezime) < 20){
         for(; *prezime && *prezime >= 'A' && *prezime <= 'z'; prezime++);
         if(!(*prezime)){
             prezime -= n;
             setPrezime(prezime);
-            printf("Prezime korisnika je validno!\n");
-            return;
+            return 1;
         } 
     }
-    printf("Prezime korisnika nije validno!\n");
+    return 0;
 }
 
 // Метода за провјеру формата датума рођења
 
 // Метода за провјеру мјеста пакетомата
-void Posiljalac::provjeraMjesta(char* mjesto){
+int Posiljalac::provjeraMjesta(char* mjesto){
     if(strlen(mjesto) > 3 || strlen(mjesto)<1){
         printf("Nije validan unos mjesta, mora imati minimalno 2 slova!\n");
-        return;
+        return 0;
     }
     for(int i=0; i<strlen(mjesto); i++){
         if(mjesto[i] < 'A' || mjesto[i] > 'Z'){
             printf("Oznaka mjesta mora biti iskljucivo velikim latinicnim slovima!\n");
-            return;
+            return 0;
         }
     }
     setMjesto(mjesto);
     printf("Mjesto je validno i postavljeno.\n");
+    return 1;
 }
-
 // Метода за провјеру идентификационог кода
 bool Posiljalac :: provjeraKoda(char *kod){
     int duzinaKoda = strlen(kod);
